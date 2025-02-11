@@ -18,6 +18,7 @@ function CV() {
   const certificationsRef = useRef(null);
   const skillsRef = useRef(null);
   const contactRef = useRef(null);
+  const projectsRef = useRef(null);
 
   const [yearsOfExperience, setYearsOfExperience] = useState(0);
 
@@ -56,6 +57,12 @@ function CV() {
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
               >
                 Experience
+              </button>
+              <button
+                onClick={() => scrollToSection(projectsRef)}
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+              >
+                Projects
               </button>
               <button
                 onClick={() => scrollToSection(educationRef)}
@@ -331,7 +338,7 @@ function CV() {
                 />
               </p>
 
-              <div className="text-lg text-gray-600 dark:text-gray-300 space-y-4">
+              <div className="text-lg text-gray-600 dark:text-gray-300 space-y-4 ml-4">
                 <p className="whitespace-break-spaces break-words leading-relaxed hyphens-auto" style={{ hyphens: 'auto' }}>
                   <AnimatedText 
                     text="Smart Office Client side project Cordova based (Windows, macOS, Android, IOS) which has WebRTC features such as instant messaging, voice calls, video calls."
@@ -443,7 +450,7 @@ function CV() {
                   className={animatedTextClasses}
                 />
               </p>
-              <ul className="list-disc list-inside text-lg text-gray-600 dark:text-gray-300 space-y-2">
+              <ul className="list-disc list-inside text-lg text-gray-600 dark:text-gray-300 space-y-2 ml-4">
                 <li><AnimatedText 
                   text="Worked as an intern on a responsive web application."
                   className={animatedTextClasses}
@@ -479,7 +486,7 @@ function CV() {
                   className={animatedTextClasses}
                 />
               </p>
-              <ul className="list-disc list-inside text-lg text-gray-600 dark:text-gray-300 space-y-2">
+              <ul className="list-disc list-inside text-lg text-gray-600 dark:text-gray-300 space-y-2 ml-4">
                 <li><AnimatedText 
                   text="Worked with network devices and gained knowledge about them and their configurations."
                   className={animatedTextClasses}
@@ -494,6 +501,44 @@ function CV() {
                 /></li>
               </ul>
             </div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section ref={projectsRef} className="mb-8 p-6 sm:p-8 lg:p-10 rounded-lg transition-all duration-300 hover:bg-white/30 dark:hover:bg-gray-800/30 hover:shadow-lg group">
+          <h2 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
+            <AnimatedText text="Projects" />
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Project Card 1 */}
+            <a 
+              href="https://cerenbattal.github.io/github-readme-generator" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block p-6 border border-gray-200 dark:border-gray-700 rounded-lg transition-all duration-300 hover:shadow-lg hover:border-indigo-500 dark:hover:border-indigo-400 group/card"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover/card:text-indigo-600 dark:group-hover/card:text-indigo-400">
+                <AnimatedText text="GitHub Readme Generator" />
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                <AnimatedText text="A simple tool to generate a GitHub README file for user profile." />
+              </p>
+            </a>
+
+            {/* Add more project cards here following the same pattern */}
+            <a 
+              href="https://cerenbattal.github.io/quickpoll/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block p-6 border border-gray-200 dark:border-gray-700 rounded-lg transition-all duration-300 hover:shadow-lg hover:border-indigo-500 dark:hover:border-indigo-400 group/card"
+            >
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover/card:text-indigo-600 dark:group-hover/card:text-indigo-400">
+                <AnimatedText text="QuickPoll" />
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                <AnimatedText text="A simple tool to create polls and share them with your friends." />
+              </p>
+            </a>
           </div>
         </section>
 
